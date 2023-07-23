@@ -1,12 +1,14 @@
 class WxGameBackground{
     constructor(root){
        this.root = root;
-       this.$background = $(`<div>游戏界面</div>`);
+       this.$background = $(`<div class="wx_game_background"></div>`);
 
 
-       this.hide();
+      // this.hide();
        this.root.$wx_game.append(this.$background);
-
+       this.width = this.$background.width();
+       this.height= this.$background.height();
+       this.game_map = new GameMap(this);
        this.start();
     }
     start(){
