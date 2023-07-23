@@ -1,23 +1,3 @@
-class GameMap extends WxGameObject{
-    constructor(background){
-        super();
-        this.background = background;
-        this.$canvas = $(`<canvas></canvas>`);
-        this.ctx = this.$canvas[0].getContext('2d');
-        this.ctx.canvas.width = this.background.width;
-        this.ctx.canvas.height =  this.background.height;
-        this.background.$background.append(this.$canvas);
-    }
-    start(){
-    }
-    update(){
-        this.render();
-    }
-    render(){
-    this.ctx.fillStyle = "rgba(0,0,0,0.6)";
-    this.ctx.fillRect(0,0,this.ctx.canvas.width,this.ctx.canvas.height);
-    }
-}
 let WX_GAME_OBJECT = [];
 
 class WxGameObject{
@@ -64,6 +44,26 @@ let WX_GAME_ANIMATION =  function(timestamp){
 }
 
 requestAnimationFrame(WX_GAME_ANIMATION);
+class GameMap extends WxGameObject{
+    constructor(background){
+        super();
+        this.background = background;
+        this.$canvas = $(`<canvas></canvas>`);
+        this.ctx = this.$canvas[0].getContext('2d');
+        this.ctx.canvas.width = this.background.width;
+        this.ctx.canvas.height =  this.background.height;
+        this.background.$background.append(this.$canvas);
+    }
+    start(){
+    }
+    update(){
+        this.render();
+    }
+    render(){
+    this.ctx.fillStyle = "rgba(0,0,0,0.6)";
+    this.ctx.fillRect(0,0,this.ctx.canvas.width,this.ctx.canvas.height);
+    }
+}
 class WxGameBackground{
     constructor(root){
        this.root = root;
