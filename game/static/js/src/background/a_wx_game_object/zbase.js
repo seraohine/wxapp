@@ -34,7 +34,7 @@ let WX_GAME_ANIMATION =  function(timestamp){
             obj.start();
             obj.has_called_start = true;
         }else{
-            obj.timedelta = obj.timestamp - last_timestamp;
+            obj.timedelta = timestamp - last_timestamp;
             obj.update();
         }
     }
